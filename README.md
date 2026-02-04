@@ -145,6 +145,8 @@ El modelo alcanzó un AUC-ROC de 0.889, lo que indica una excelente capacidad pa
 
 ## Implementación en Amazon SageMaker
 
+Durante la fase de implementación, se procedió a configurar el endpoint de inferencia utilizando la consola de Amazon SageMaker Studio. Sin embargo, al ejecutar el proceso de deployment, el sistema retornó un mensaje de error relacionado con permisos insuficientes. Tras la revisión de la configuración de la cuenta, se identificó que las cuentas proporcionadas por AWS Academy operan bajo un esquema de permisos restringidos que limita ciertas operaciones críticas, específicamente la capacidad de crear y mantener endpoints activos para modelos de machine learning en el servicio SageMaker. Esta restricción de políticas IAM impidió completar el despliegue del modelo en un entorno de producción real dentro de la plataforma AWS.
+
 ### Arquitectura Propuesta
 
 El modelo está diseñado para ser desplegado en Amazon SageMaker siguiendo esta arquitectura:
@@ -184,6 +186,8 @@ La función de inferencia implementada realiza:
 - Latencia estimada: < 50 ms
 - Throughput: Compatible con aplicaciones de tiempo real
 - Escalabilidad: Soporta configuración multi-instancia
+
+
 
 
 ## Conclusiones
